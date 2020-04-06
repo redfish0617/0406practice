@@ -1,0 +1,25 @@
+﻿@using _0406MVC_4.Models.ViewModel.Sample
+
+
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "登入";
+    Html.EnableClientValidation(true);
+    Html.EnableUnobtrusiveJavaScript(true);
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<br>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.EditorForModel()
+    <br>
+    <button type="submit">登入</button>
+    <button type="reset">取消</button>
+}
+
